@@ -6,10 +6,14 @@ function sumar()
 	var number1;
 	var number2;
 	var sum;
-
+    
+    //tomo datos por id 
 	number1=numeroUno.value;
 	number2=numeroDos.value;
-
+    
+    //transformo a enteros las variables con un parseInt
+    //el parseInt solo es obligatorio en las sumas 
+    //por que el + tiene doble uso concatenar y sumar  
 	var number1=parseInt(number1);
 	var number2=parseInt(number2);
 	

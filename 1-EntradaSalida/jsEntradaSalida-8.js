@@ -10,10 +10,12 @@ function SacarResto()
 	
 	dividend=numeroDividendo.value;
 	divider=numeroDivisor.value;
-
+    
+    //en las divisiones no es obligatorio usar parseInt 
 	var dividend=parseInt(dividend);
 	var divider=parseInt(divider);
 
+    //uso el modulo para motrar el resto
 	rest=dividend%divider;
 
 	alert("the rest is: "+rest);

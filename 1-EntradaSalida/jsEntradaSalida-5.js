@@ -4,8 +4,12 @@ function mostrar()
 {	
 	var name;
 	var age;
+
+    //tomo datos por id
 	name=elNombre.value;
 	age=laEdad.value;
+
+    //muestro por alert con concatenacion 
 	alert ("Your name is: "+name+" and your age is: " +age);
 
 }

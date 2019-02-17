@@ -10,24 +10,79 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	var lamparaBajoConsumo;
- 	var precioDescuentos;
- 	var precioFinal;
- 	var cantidadLampara;
+	var cantidadLamparas;
+	var lamparitasBajoConsumo;
+	var precioFinal;
+	var porcentaje;
+	var precioBruto;
+	var ingresoBruto;
 
- 	cantidadLampara=cantidad.value;
- 	lamparaBajoConsumo=35;
+	lamparitasBajoConsumo=35;
+	porcentaje=100;
 
- 	lamparaBajoConsumo=parseInt(lamparaBajoConsumo);
+	lamparitasBajoConsumo=parseInt(lamparitasBajoConsumo);
 
- 	precioFinal=cantidadLampara*lamparaBajoConsumo;
+	cantidadLamparas=cantidad.value;
 
-	if(lamparaBajoConsumo>5){
+	precioBruto=lamparitasBajoConsumo*cantidadLamparas;
 
- 		precioDescuentos=precioFinal*50/100;
- 		precioDescuento.value=precioDescuentos;
+	if(cantidadLamparas>5){
 
- 	}
+		porcentaje=50;
 
- 	//precioDescuento.value=precioFinal;
+	}else{
+
+		if(cantidadLamparas==5){
+
+			if(Marca == "ArgentinaLuz"){
+
+				porcentaje=60;
+			}else{
+
+				porcentaje=70;
+			}
+		}else{
+
+			if(cantidadLamparas==4){
+
+				if(Marca=="ArgentinaLuz" || Marca=="FelipeLamparas"){
+
+					porcentaje=75;
+				}else{
+
+					porcentaje=80;
+				}
+			}else{
+
+				if(cantidad==3){
+
+					if(Marca=="ArgentinaLuz"){
+
+						porcentaje=85;
+					}else{
+
+						if(cantidad==3){
+
+							if(Marca=="FelipeLamparas"){
+
+								porcentaje=90;
+							}
+						}
+					}
+				}else{
+
+					porcentaje=95;
+				}
+			}
+		}
+	}
+
+	precioFinal=precioBruto*porcentaje/100;
+	precioDescuento.value=precioFinal;
+	//alert(precioFinal);
+	if(precioFinal>120){
+
+		ingresoBruto=precioFinal*10/100;
+		alert("Usted pago "+ingresoBruto+" de IIBB");
+	}
 }

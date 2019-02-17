@@ -3,6 +3,6 @@ function mostrar()
 {
 	//con alert mostramos una alerta
 	//(es una ventana emergente de salida que se muestra por pantalla)
-	alert("ok");
+	alert("Esto funciona de maravilla ");
 }
 

@@ -6,11 +6,14 @@ function mostrar()
 
 	edadUno=edad.value;
 
-	if(edadUno==15){
+	if(edadUno>17){
 
 
 		mensaje="Es mayor de edad ";
 
+	}else{
+
+		mensaje="Es menor de edad";
 	}
 
 	alert(mensaje);

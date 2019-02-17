@@ -1,9 +1,10 @@
 function mostrar()
 {
 //tomo la edad  
-	var mesDelAño = document.getElementById('mes').value;
+	var mesDelAño;
 	var mensaje;
 
+   mesDelAño = document.getElementById('mes').value;
 
 	switch(mesDelAño) {
   case "Enero":

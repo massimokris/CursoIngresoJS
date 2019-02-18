@@ -32,28 +32,8 @@ function verificar()
 	
 	if(numeroIngresado==numeroSecreto){
 
-		//mensaje=("Sos un genio y lo hiciste en: "+contadorIntentos+" intentos ");
-		//agregamos el switch para mostar un mensaje dependiendo de la cantidad de intentos
-		switch(contadorIntentos){
-			case 1:
-			mensaje="Vidente";
-			break;
-			case 2:
-			mensaje="Genio";
-			break;
-			case 3:
-			mensaje="Logico";
-			break;
-			case 4:
-			mensaje="Exelente";
-			break;
-			case 5:
-			mensaje="Bueno";
-			break;
-			case 6:
-			mensaje="Promedio";
-			break;
-		}
+		mensaje=("Sos un genio y lo hiciste en: "+contadorIntentos+" intentos ");
+		
 	}else{
 		if(numeroIngresado<numeroSecreto){
 			

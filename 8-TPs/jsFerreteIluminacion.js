@@ -16,6 +16,7 @@ function CalcularPrecio ()
 	var porcentaje;
 	var precioBruto;
 	var ingresoBruto;
+	var marca;
 
 	lamparitasBajoConsumo=35;
 	porcentaje=100;
@@ -23,10 +24,11 @@ function CalcularPrecio ()
 	lamparitasBajoConsumo=parseInt(lamparitasBajoConsumo);
 
 	cantidadLamparas=cantidad.value;
+	marca=Marca.value;
 
 	precioBruto=lamparitasBajoConsumo*cantidadLamparas;
 
-	if(cantidadLamparas>5){
+	if(cantidadLamparas>5 && marca=="ArgentinaLuz"){
 
 		porcentaje=50;
 
@@ -34,7 +36,7 @@ function CalcularPrecio ()
 
 		if(cantidadLamparas==5){
 
-			if(Marca == "ArgentinaLuz"){
+			if(marca == "ArgentinaLuz"){
 
 				porcentaje=60;
 			}else{
@@ -45,7 +47,7 @@ function CalcularPrecio ()
 
 			if(cantidadLamparas==4){
 
-				if(Marca=="ArgentinaLuz" || Marca=="FelipeLamparas"){
+				if(marca=="ArgentinaLuz" || marca=="FelipeLamparas"){
 
 					porcentaje=75;
 				}else{
@@ -54,24 +56,24 @@ function CalcularPrecio ()
 				}
 			}else{
 
-				if(cantidad==3){
+				if(cantidadLamparas==3){
 
-					if(Marca=="ArgentinaLuz"){
+					if(marca=="ArgentinaLuz"){
 
 						porcentaje=85;
 					}else{
 
-						if(cantidad==3){
+						if(cantidadLamparas==3){
 
-							if(Marca=="FelipeLamparas"){
+							if(marca=="FelipeLamparas"){
 
 								porcentaje=90;
+							}else{
+
+								porcentaje=95;
 							}
 						}
 					}
-				}else{
-
-					porcentaje=95;
 				}
 			}
 		}

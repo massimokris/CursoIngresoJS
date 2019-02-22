@@ -20,7 +20,7 @@ function mostrar()
 	switch(tipoDePago){
 
 		case"visa":
-		case"mercadoPago"
+		case"mercadoPago":
 		promociones=90;
 		break;
 		case"paypal":
@@ -38,16 +38,16 @@ function mostrar()
 
 }
 
-//switch(tipoDePaquete){
-			//ase"todoIncluido":
-			//promociones=75;
-		//}
-		//break;
-		//switch(tipoDePaquete){
-			//case"soloDesayunos":
-			//promociones=70;
-			//break;
-			//case"todoIncluido":
-			//promociones=65;
-			//break;
-		//}
+switch(tipoDePaquete){
+			case"todoIncluido":
+			promociones=75;
+		}
+		break;
+		switch(tipoDePaquete){
+			case"soloDesayunos":
+			promociones=70;
+			break;
+			case"todoIncluido":
+			promociones=65;
+			break;
+		}

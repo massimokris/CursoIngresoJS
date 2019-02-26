@@ -1,36 +1,69 @@
 function mostrar()
 {
-	var notas;
+	var nota;
 	var sexo;
 	var promedio;
-	var notaBaja;
-	var mayorCinco;
-	var contador;
 	var sumaNotas;
-	var acumuladorVarones;
+	var notaBaja;
+	var sexoNotaBaja;
+	var contador;
+	var contadorVarones;
 
 	contador=0;
 	sumaNotas=0;
-	acumuladorVarones=0;
+	contadorVarones=0;
+	notaBaja=0;
+
+	
 
 	while(contador<5){
 
-		contador=contador+1;
-		notas=prompt("ingrese la nota: ");
-		notas=parseInt(notas);
-		sexo=prompt("ingrese el sexo: ");
-		if(notas>notaBaja){
+		nota=prompt("Ingrese la nota: ");
+		console.log(notaBaja);
 
-			notaBaja=notas;
-		} 
+		var nota=parseInt(nota);
+		var sumaNotas=parseInt(sumaNotas);
+		
+		sumaNotas=sumaNotas+nota;
 
-		if(notas>5 && sexo=="m"){
+		sexo=prompt("Ingrese el sexo: ");
+		
+		console.log(sumaNotas);
+		
+		while(nota<0 || nota>10){
 
-		acumuladorVarones=acumuladorVarones+1;
+			nota=prompt("error, ingrese una nota valida: ");
 		}
-		//sumaNotas=sumaNotas+numero;
+
+		while(sexo!="m" && sexo!="f"){
+
+			sexo=prompt("error, ingrese un sexo valido: ");
+		}
+
+		if(contador==0){
+
+			notaBaja=nota;
+			sexoNotaBaja=sexo;
+		}else{
+
+			if(nota<notaBaja){
+
+				notaBaja=nota;
+				sexoNotaBaja=sexo;
+			}
+		}
+
+		if(nota>5 && sexo=="m"){
+
+			contadorVarones=contadorVarones+1;
+		}
+
+		contador=contador+1;
 	}
 
-  	promedio=sumaNotas/notas;
-	alert("el promedio de todas las notas es: "+promedio+" la nota mas baja es: "+notaBaja+" y su sexo es: "+sexo+" hay "+acumuladorVarones+" varones que su nota es mas que 5 ");
+	promedio=sumaNotas/contador;
+
+	alert("El promedio de los alumnos es: "+promedio+" la nota mas baja es: "+notaBaja+ " y su sexo es: "+sexoNotaBaja+", "+contadorVarones+" varones sacaron mas de 5");
+
+
 }

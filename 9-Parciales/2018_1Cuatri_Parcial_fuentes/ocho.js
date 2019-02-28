@@ -5,94 +5,103 @@ function mostrar()
 	var acumuladorPares;
 	var acumuladorImpares;
 	var acumuladorCeros;
-	var promedio;
 	var acumuladorPositivos;
-	var sumaNegativos;
 	var sumaPositivos;
+	var promedio;
+	var sumaNegativos;
+	var numeroAlto;
+	var letraAlto;
 	var numeroBajo;
 	var letraBaja;
-	var numeroAlto;
-	var letraAlta;
 	var respuesta;
-	var contador;
+	var acumulador;
 
 	respuesta="si";
-	contador=0;
 	acumuladorPares=0;
 	acumuladorImpares=0;
 	acumuladorCeros=0;
 	acumuladorPositivos=0;
-	numeroBajo=0;
 	numeroAlto=0;
+	numeroBajo=0;
+	sumaPositivos=0;
+	sumaNegativos=0;
+	acumulador=0;
+
+	var sumaPositivos=parseInt(sumaPositivos);
+	var sumaNegativos=parseInt(sumaNegativos);
 
 	while(respuesta=="si"){
 
-		numero=prompt("ingrese un numero: ");
+		numero=prompt("Ingrese un numero: ");
 		letra=prompt("Ingrese una letra: ");
-		respuesta=prompt("para continuar presione (si)";
+		var numero=parseInt(numero);
+
 		while(numero>100 || numero<-100){
 
-			numero=prompt("error, ingrese un numero valido: ");
-
+			numero=prompt("Error, ingrese un numero valido: ");
 		}
 
-		if(contador==0){
+		if(numero==0){
+
+			acumuladorCeros=acumuladorCeros+1;	
+		}else{
+
+			if(numero>0){
+
+				acumuladorPositivos=acumuladorPositivos+1;
+				sumaPositivos=sumaPositivos+numero;
+
+				console.log(acumuladorPositivos);
+				console.log(sumaPositivos);
+			}else{
+
+				sumaNegativos=sumaNegativos+numero;
+			}
+		}
+
+		if(numero%2==0){
+
+			acumuladorPares=acumuladorPares+1;
+		}else{
+
+			acumuladorImpares=acumuladorImpares+1;
+		}
+
+		if(acumulador==0){
 
 			numeroAlto=numero;
+			letraAlto=letra;
 			numeroBajo=numero;
-			letraAlta=letra;
 			letraBaja=letra;
 		}else{
 
 			if(numero>numeroAlto){
 
 				numeroAlto=numero;
-				letraAlta=letra;
+				letraAlto=letra;
 			}else{
 
-				if(numero<numeroBajo){
-
-					numeroBajo=numero;
-					letraBaja=letra;
-				}else{
-
-					if(numero==0){
-
-						acumuladorCeros=acumuladorCeros+1;
-					}else{
-
-						if(numero%2==0){
-
-							acumuladorPares=acumuladorPares+1;
-						}else{
-
-							if(numero%2!==0){
-
-								acumuladorImpares=acumuladorImpares+1;
-							}else{
-
-
-								if(numero>0){
-
-									acumuladorPositivos=acumuladorPositivos+1;
-									sumaPositivos=sumaPositivos+numero;
-								}else{
-
-									if(numero<0){
-
-										sumaNegativos=sumaNegativos+numero;
-									}
-								}
-							}
-						}
-					}
-				}
-			}		
+				numeroBajo=numero;
+				letraBaja=letra;
+			}
 		}
 
-		contador=contador+1;
+		acumulador=acumulador+1;
+		respuesta=prompt("Para continuar ingrese (si) ");
 	}
 
+	
 	promedio=sumaPositivos/acumuladorPositivos;
-	alert("numero pares: "+acumuladorPares+" numero impares: "+acumuladorImpares+" cantidad de ceros: "+acumuladorCeros+" promedio de positivos: "+promedio+" suma de nagativos: "+sumaNegativos+" numero y letra mas alta: "+numeroAlto+", "+letraAlta+" numero y letra mas baja: "+numeroBajo+", "+letraBaja);
+
+	document.write(
+		"Numeros pares: "+acumuladorPares+
+		"Numeros impares: "+acumuladorImpares+
+		"Cantidad de ceros: "+acumuladorCeros+
+		"Promedio positivos: "+promedio+
+		"Suma negativos: "+sumaNegativos+
+		"Numero y letra maxima: "+numeroAlto+", "+letraAlto+
+		"Numero y letra minima: "+numeroBajo+", "+letraBaja
+	);
+
 }
+

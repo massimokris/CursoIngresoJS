@@ -25,7 +25,6 @@ function mostrar()
 		case "19":
 		mensaje=("es de tarde");
 		break;
-		case "0":
 		case "1":
 		case "2":
 		case "3":
